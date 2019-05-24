@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_print_location_ept,print_location_ept,model_print_location_ept,,1,1,1,1
+access_garment_material_ept,garment_material_ept,model_garment_material_ept,,1,1,1,1
+access_ink_color_ept,ink_color_ept,model_ink_color_ept,,1,1,1,1
+access_vinyl_material_ept,vinyl_material_ept,model_vinyl_material_ept,,1,1,1,1
+access_vinyl_color_ept,vinyl_color_ept,model_vinyl_color_ept,,1,1,1,1
+access_vinyl_material_color_ept,vinyl_material_color_ept,model_vinyl_material_color_ept,,1,1,1,1
+access_screen_ink_type_ept,screen_ink_type_ept,model_screen_ink_type_ept,,1,1,1,1
+access_screen_ink_color_type_ept,screen_ink_color_type_ept,model_screen_ink_color_type_ept,,1,1,1,1
+access_embroidery_thread_type_ept,embroidery_thread_type_ept,model_embroidery_thread_type_ept,,1,1,1,1
+access_embroidery_thread_color_ept,embroidery_thread_color_ept,model_embroidery_thread_color_ept,,1,1,1,1
+access_embroidery_thread_type_color_ept,embroidery_thread_type_color_ept,model_embroidery_thread_type_color_ept,,1,1,1,1
+access_screen_ink_color_ept,screen_ink_color_ept,model_screen_ink_color_ept,,1,1,1,1

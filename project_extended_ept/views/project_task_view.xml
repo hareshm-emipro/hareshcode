@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Developed by:Prakash Makwana Modify by :Haresh Mori View for added two 
+	fields in project task model form view -->
+<odoo>
+	<data>
+		<record id="extended_project_task_form2_view_for_return_picking"
+			model="ir.ui.view">
+			<field name="name">project.task.form2.view.inherited</field>
+			<field name="model">project.task</field>
+			<field name="inherit_id" ref="project.view_task_form2" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='user_id']" position="after">
+					<field name="return_picking_id" />
+					<field name="sale_order_id" />
+					<field name="projects" />
+				</xpath>
+				<xpath expr="//form/sheet/notebook" position="inside">
+					<page string="Decoration">
+						<group>
+							<field name="print_location_id" />
+							<field name="distress_level" />
+							<field name="smallest_size" />
+							<field name="garment_material_id" />
+							<field name="decoration_color"/>
+						</group>
+					</page>
+				</xpath>
+				<xpath expr="//form/sheet/notebook" position="inside">
+					<page string="Screen Printing" attrs="{'invisible':[('projects','!=','scr')]}">
+						<group>
+							<group>
+								<field name="screen_mesh_size" />
+								<field name="Squeegee" />
+								<field name="oven_temp" />
+								<field name="oven_speed" />
+							</group>
+						</group>
+					</page>
+					<page string="Screen Ink Type Color" attrs="{'invisible':[('projects','!=','scr')]}">
+						<field name="ink_type_ids" mode="tree">
+							<form string="Screen Ink Type Color">
+								<group>
+									<field name="screen_ink_type_id" />
+									<field name="screen_ink_color_id" domain="[('screen_ink_type_id','=',screen_ink_type_id)]"/>
+								</group>
+							</form>
+							<tree string="Screen Ink Type Color" editable="bottom">
+								<field name="screen_ink_type_id" />
+								<field name="screen_ink_color_id" domain="[('screen_ink_type_id','=',screen_ink_type_id)]" />
+							</tree>
+						</field>
+					</page>
+					<page string="Vinyl" attrs="{'invisible':[('projects','!=','vyn')]}">
+						<group>
+							<group>
+								<field name="press_temp" />
+								<field name="press_pressure" />
+								<field name="press_time" />
+							</group>
+						</group>
+					</page>
+					<page string="Vinyl Material Color" attrs="{'invisible':[('projects','!=','vyn')]}">
+						<field name="vinyl_material_color_ids" mode="tree">
+							<form string="Vinyl Material Color">
+								<group>
+									<field name="vinyl_material_id" />
+									<field name="vinyl_color_id" domain="[('vinyl_material_type_id','=',vinyl_material_id)]" />
+								</group>
+							</form>
+							<tree string="Vinyl Material Color" editable="bottom">
+								<field name="vinyl_material_id" />
+								<field name="vinyl_color_id" domain="[('vinyl_material_type_id','=',vinyl_material_id)]" />
+							</tree>
+						</field>
+					</page>
+					<page string="Sublimation" attrs="{'invisible':[('projects','!=','sub')]}">
+						<group>
+							<group>
+								<field name="sublimation_press_temp" />
+								<field name="sublimation_press_pressure" />
+								<field name="sublimation_press_time" />
+							</group>
+						</group>
+					</page>
+					<page string="Embroidery Thread Type Color" attrs="{'invisible':[('projects','!=','emb')]}">
+						<field name="thread_type_color_ids" mode="tree">
+							<form string="Embroidery Thread Type Color">
+								<group>
+									<field name="thread_type_id" />
+									<field name="thread_color_id" domain="[('embroidery_thread_type_id','=',thread_type_id)]" />
+								</group>
+							</form>
+							<tree string="Embroidery Thread Type Color" editable="bottom">
+								<field name="thread_type_id" />
+								<field name="thread_color_id" domain="[('embroidery_thread_type_id','=',thread_type_id)]" />
+							</tree>
+						</field>
+					</page>
+					<page string="Wall Chart" attrs="{'invisible':[('projects','!=','cht')]}">
+						<group>
+							<group>
+								<field name="template_number" />
+								<field name="wall_chart_paper_size" />
+							</group>
+						</group>
+					</page>
+
+					<page string="Headgear Wrap" attrs="{'invisible':[('projects','!=','hdg')]}">
+						<group>
+							<group>
+								<field name="headgear_type" />
+
+							</group>
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+		<!-- for screen priting project tree view-->
+		<record id="screen_ink_color_tree_view" model="ir.ui.view">
+			<field name="name">screen.ink.color.type.ept.tree</field>
+			<field name="model">screen.ink.color.type.ept</field>
+			<field name="arch" type="xml">
+				<tree string="Screen Ink Type Color">
+					<field name="screen_ink_type_id" />
+					<field name="screen_ink_color_id" domain="[('screen_ink_type_id','=',screen_ink_type_id)]" />
+				</tree>
+			</field>
+		</record>
+		<!-- for vinyl project tree view-->
+		<record id="vinyl_material_color_tree_view" model="ir.ui.view">
+			<field name="name">vinyl.material.color.ept.tree</field>
+			<field name="model">vinyl.material.color.ept</field>
+			<field name="arch" type="xml">
+				<tree string="Vinyl Material Color">
+					<field name="vinyl_material_id" />
+					<field name="vinyl_color_id" domain="[('vinyl_material_type_id','=',vinyl_material_id)]" />
+				</tree>
+			</field>
+		</record>
+		<!-- for embroidery project tree view-->
+		<record id="embroidery_thread_type_color_tree_view" model="ir.ui.view">
+			<field name="name">embroidery.thread.type.color.ept.tree</field>
+			<field name="model">embroidery.thread.type.color.ept</field>
+			<field name="arch" type="xml">
+				<tree string="Embroidery Thread Type Color">
+					<field name="thread_type_id" />
+					<field name="thread_color_id" domain="[('embroidery_thread_type_id','=',thread_type_id)]" />
+				</tree>
+			</field>
+		</record>
+
+	</data>
+</odoo>

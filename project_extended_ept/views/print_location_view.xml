@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Developed by:Haresh Mori -->
+<odoo>
+	<data>
+		<record id="extended_project_task_form2_view_for_return_picking"
+			model="ir.ui.view">
+			<field name="name">project.task.form2.view.inherited</field>
+			<field name="model">project.task</field>
+			<field name="inherit_id" ref="project.view_task_form2" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='user_id']" position="after">
+					<field name="return_picking_id" />
+					<field name="sale_order_id" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

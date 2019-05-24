@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Developed by:Haresh Mori -->
+<odoo>
+	<data>
+		<record id="extended_project_project_form_view" model="ir.ui.view">
+			<field name="name">project.project.form.view.inherited</field>
+			<field name="model">project.project</field>
+			<field name="inherit_id" ref="project.edit_project" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='subtask_project_id']" position="after">
+					<field name="projects" />
+					<field name="default_assigned_id" />
+					<field name="timeshets_employee_ids" widget="many2many_tags" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>
