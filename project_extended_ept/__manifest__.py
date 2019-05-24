@@ -1,5 +1,5 @@
 {
-    'name': 'Project Extended',
+    'name': 'Project Extended Ept',
     'summary': ' Extend for Project Task',
     'version': '1.0',
     'author': 'Emipro Technologies Pvt. Ltd.',
